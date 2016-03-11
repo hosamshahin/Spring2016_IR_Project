@@ -1,0 +1,19 @@
+{
+	"collections": [{
+		"Id": "602",
+		"name": "Germanwings",
+		"type": "binary",
+	"FP": ["matter","african"]
+	}, {
+		"Id": "603",
+		"name": "Germanwings1",
+		"type": "multiClass",
+		"classVlaues": [{
+			"name": "ebola",
+			"FP": [2, 3]
+		}, {
+			"name": "virusxyz",
+			"FP": [4, 6]
+		}]
+	}]
+}
