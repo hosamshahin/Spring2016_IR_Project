@@ -26,7 +26,7 @@
   \pagenumbering{roman} %use roman page numbering in the frontmatter
   \input{sections/frontpage.tex}
   \input{sections/abstract.tex}
-  \input{sections/acknowledgements.tex}
+  %\input{sections/acknowledgements.tex}
 
   \cleardoublepage
 
@@ -34,8 +34,14 @@
   \pagestyle{fancy} %enable headers and footers again
   \tableofcontents
   \listoffigures
+  
+  % Puts list of figures and tables on the same page for now, until they
+  % get big enough to warrant their own pages
+  \begingroup
+  \let\clearpage\relax 
   \listoftables
-
+  \endgroup
+  
   \cleardoublepage
 
   %mainmatter
@@ -50,6 +56,6 @@
   \input{sections/futureWork.tex}
   \printbibliography[heading=bibintoc]
   \label{bib:mybiblio}
-  \appendix
-  \input{sections/appAname.tex}
+  %\appendix
+  %\input{sections/appAname.tex}
 \end{document}

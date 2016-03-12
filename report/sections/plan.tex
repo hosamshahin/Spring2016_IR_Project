@@ -1,31 +1,109 @@
 \chapter{Plan}\label{ch:plan}
-Here is the introduction. The next chapter is chapter~\ref{ch:ch2label}.
 
+Please see table \ref{table:plan} for the weekly breakdown of work.
 
-a new paragraph
+\rowcolors{2}{gray!25}{white}
+\begin{table}
+\caption{Weekly breakdown of work to be done.}\label{table:plan}
+\begin{tabularx}{155mm}{|>{\setlength\hsize{.2\hsize}\setlength\linewidth{\hsize}}X|>{\setlength\hsize{.3\hsize}\setlength\linewidth{\hsize}}X|>{\setlength\hsize{1.5\hsize}\setlength\linewidth{\hsize}}X|}
+	\rowcolor{gray!50}
+\hline
+% \multicolumn{3}{|c|}{Classification of the criticel point $(0,0)$ of $x'=Ax,|\mathbf{A}|\not=0$.}\\
+% \hline
+\centering Weeks & \centering End Date & Tasks \\
+\hline
 
+Week 1
+&
+22 Jan.
+&
+Understanding the classification task\\
+\hline
 
-\section{Examples}
-You can also have examples in your document such as in example~\ref{ex:simple_example}.
-\begin{example}{An Example of an Example}
-  \label{ex:simple_example}
-  Here is an example with some math
-  \begin{equation}
-    0 = \exp(i\pi)+1\ .
-  \end{equation}
-  You can adjust the colour and the line width in the {\tt macros.tex} file.
-\end{example}
+Week 2
+&
+29 Jan.
+&
+\begin{itemize}
+\item Understanding the classification task
+\item Read about \href{https://canvas.vt.edu/courses/21271/files/folder/2015/Tutorials?preview=390175}{Hadoop streaming using python}
+\end{itemize}\\
+\hline
 
-\section{How Does Sections, Subsections, and Subsections Look?}
-Well, like this
-\subsection{This is a Subsection}
-and this
-\subsubsection{This is a Subsubsection}
-and this.
+Week 3
+&
+5 Feb.
+&
+Start online tutorials about Hadoop and Apache Spark.\\
+\hline
 
-\paragraph{A Paragraph}
-You can also use paragraph titles which look like this.
+Week 4
+&
+12 Feb.
+&
+Continue online tutorials about Hadoop and Apache Spark.\\
+\hline
 
-\subparagraph{A Subparagraph} Moreover, you can also use subparagraph titles which look like this\todo{Is it possible to add a subsubparagraph?}. They have a small indentation as opposed to the paragraph titles.
+Week 5
+&
+19 Feb.
+&
+\textbf{Phase 1 will include only tweets small data set:}
+\begin{itemize}
+\item Understanding the classification task
+\item Read about Hadoop streaming using python
+\end{itemize}\\
+\hline
 
-\todo[inline,color=green]{I think that a summary of this exciting chapter should be added.}
+Week 6
+&
+26 Feb.
+&
+\begin{itemize}
+\item Prepare training data using Solr
+\item Build classifier using Apache Spark
+\end{itemize}\\
+\hline
+
+Week 7
+&
+4 March
+&
+\begin{itemize}
+\item Build classifier using Apache Spark
+\item Get output data format from Solr team
+\end{itemize}\\
+\hline
+
+Week 8
+&
+11 March
+&
+Optimize classifier performance\\
+\hline
+\end{tabularx}
+\end{table}
+\newpage
+\begin{tabularx}{155mm}{|>{\setlength\hsize{.2\hsize}\setlength\linewidth{\hsize}}X|>{\setlength\hsize{.3\hsize}\setlength\linewidth{\hsize}}X|>{\setlength\hsize{1.5\hsize}\setlength\linewidth{\hsize}}X|}
+\hline
+% \multicolumn{3}{|c|}{Classification of the criticel point $(0,0)$ of $x'=Ax,|\mathbf{A}|\not=0$.}\\
+% \hline
+Weeks & End Date & Tasks \\
+\hline
+Week 9-15
+&
+TBD
+&
+\textbf{Phase 2 will include tweets and web pages:}
+\begin{itemize}
+\item Contact collection management team to get the noise reduction techniques and apply it on the web pages.
+\item Repeat the same process done on Phase 1 on web pages.
+\end{itemize}
+We have ideas to further optimize the classifier performance:
+\begin{itemize}
+\item Search for known approachs to select the most representative data samples for each collection.
+\item Integrate hyper parameters optimization library \cite{bergstra2013hyperopt} output with Spark.
+\end{itemize}\\
+\hline
+
+\end{tabularx}

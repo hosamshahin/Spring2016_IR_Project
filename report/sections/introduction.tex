@@ -1,31 +1,14 @@
 \chapter{Introduction}\label{ch:introduction}
-Here is the introduction. The next chapter is chapter~\ref{ch:ch2label}.
 
+The classification team’s goal is to take collections of tweets and web pages and sort them into classes based on their relevance to those classes. Our team fits into the grand scheme of the project by working between the Collection Management team and the Solr team. The Collection Management team will be responsible for taking the raw tweet and web-page data and filtering out any obvious spam, vulgarity, or otherwise unreadable and unwanted content. We will receive this cleaned data from them, at which point we will attempt to classify each document's relevance to a specific category. We will explore several methods for accomplishing this, starting with the methodology laid out by last semester’s Classification team \cite{cui2015classification}. Once we have classified the data, we will be able to pass it along to the Solr team. The Solr team will import our classified data into the Solr system, making it accessible to the other teams on the project.
 
-a new paragraph
+% TODO: This paragraph needs to change to better reflect where we stand now.
+%This paper is the second interim report and is a draft of what will be a much more in--depth report of our project as the semester progresses. Currently, we have begun documenting our progress at understanding the information given to us by the textbook and the report from last year's team in Chapter \ref{ch:literatureReview}. In Chapter \ref{ch:ReqDesignImp} we have begun to outline our initial plan to get a basic system up and running by the middle of March. This chapter will undergo heavy changes as we go through development iterations. Chapters \ref{ch:userManual} and \ref{ch:developerManual} are stubs for the moment, but they will be filled out as needed in the future. Chapter \ref{ch:plan} outlines our plans up to the middle of March, when we intend to have the basic system working. As we get closer to and past that date, we will expand upon this section with our plans to improve on our design for the rest of the semester. Chapters \ref{ch:conclusion} and \ref{ch:futureWork} are also currently stubs, and will be filled out when we have a better idea of where our project will end for the semester.
 
+This paper represents the second interim report from the Classification team working as a part of the larger scale project for CS5604 Information Storage and Retrieval. The current state of the work is a partial draft of the final report, therefore expect further additions and details in some chapters as the course progresses.
 
-\section{Examples}
-You can also have examples in your document such as in example~\ref{ex:simple_example}.
-\begin{example}{An Example of an Example}
-  \label{ex:simple_example}
-  Here is an example with some math
-  \begin{equation}
-    0 = \exp(i\pi)+1\ .
-  \end{equation}
-  You can adjust the colour and the line width in the {\tt macros.tex} file.
-\end{example}
+We begin by documenting our understanding of some of the pertinent literature, namely the course textbook and the Classification team report from last year; this can be found in Chapter \ref{ch:literatureReview}, our literature review. Chapter \ref{ch:ReqDesignImp} is the primary section of the document and includes our discussion of the project requirements, an outline our design for the classification portion of the larger project, and finally a breakdown of our current progress and future plans for the text classification project.
 
-\section{How Does Sections, Subsections, and Subsections Look?}
-Well, like this
-\subsection{This is a Subsection}
-and this
-\subsubsection{This is a Subsubsection}
-and this.
+These chapters are then followed by a User Manual in Chapter \ref{ch:userManual}, where we will discuss details a user of our methods and programs would be interested in. We then include a separate Developer Manual in Chapter \ref{ch:developerManual}, which will document and include details of the code base and how it might be extended and leveraged by other developers.
 
-\paragraph{A Paragraph}
-You can also use paragraph titles which look like this.
-
-\subparagraph{A Subparagraph} Moreover, you can also use subparagraph titles which look like this\todo{Is it possible to add a subsubparagraph?}. They have a small indentation as opposed to the paragraph titles.
-
-\todo[inline,color=green]{I think that a summary of this exciting chapter should be added.}
+Following this we include our conclusions about the state of the project thus far in Chapter \ref{ch:conclusion} and present our thoughts for future work in Chapter \ref{ch:futureWork}.
