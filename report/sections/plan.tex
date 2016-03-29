@@ -90,20 +90,47 @@ Optimize classifier performance\\
 % \hline
 Weeks & End Date & Tasks \\
 \hline
-Week 9-15
+Week 9
+&
+18 March
+&
+\textbf{Phase 2 will include tweets and web pages:} \
+
+\textbf{Once Spark on the cluster is updated to version 1.6 we will do the following:}
+
+\begin{itemize}
+\item Run our methodology to classify the tweets on the cluster.
+\item Apply the Frequent Pattern methodology on the cleaned pages provided by collection management team.
+\item Develop Hbase interface through which the classifier prediction output will be saved on Hbase.
+\end{itemize}\\
+\hline
+
+Week 10
+&
+25 March
+&
+Design an evaluation approach to test and evaluate our methodology. \\
+\hline
+
+Week 11
+&
+1 April
+&
+Train multiple classifiers and pick the best model per collection. \\
+\hline
+
+Week 12
+&
+8 April
+&
+More research on Hyper-parameter optimization. Check the feasibility of Integrating hyper parameters optimization library \cite{bergstra2013hyperopt} output with Spark. \\
+\hline
+
+Week 13-15
 &
 TBD
 &
-\textbf{Phase 2 will include tweets and web pages:}
-\begin{itemize}
-\item Contact collection management team to get the noise reduction techniques and apply it on the web pages.
-\item Repeat the same process done on Phase 1 on web pages.
-\end{itemize}
-We have ideas to further optimize the classifier performance:
-\begin{itemize}
-\item Search for known approachs to select the most representative data samples for each collection.
-\item Integrate hyper parameters optimization library \cite{bergstra2013hyperopt} output with Spark.
-\end{itemize}\\
+Search for known approaches to select the most representative data samples for each collection. Then check whether training a classifier using these data samples will enhance the performance or not. \\
 \hline
 
 \end{tabularx}
