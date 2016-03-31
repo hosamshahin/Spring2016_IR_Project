@@ -3,17 +3,45 @@
 		"Id": "602",
 		"name": "Germanwings",
 		"type": "binary",
-	"FP": ["matter","african"]
+		"FP": ["matter", "african"]
 	}, {
-		"Id": "603",
-		"name": "Germanwings1",
+		"Id": "541",
+		"name": "NAACPBombing",
+		"type": "binary",
+		"FP": ["matter", "african"]
+	}, {
+		"Id": "668 ",
+		"name": "houstonflood",
+		"type": "binary",
+		"FP": ["matter", "african"]
+	}, {
+		"Id": "700",
+		"name": "wdbj7 shooting ",
+		"type": "binary",
+		"FP": ["matter", "african"]
+	}, {
+		"Id": "686",
+		"name": "Obamacare",
+		"type": "binary",
+		"FP": ["matter", "african"]
+	}, {
+		"Id": "694 ",
+		"name": "4thofJuly",
+		"type": "binary",
+		"FP": ["matter", "african"]
+	}, {
+		"Id": "532",
+		"name": "AirAsia",
 		"type": "multiClass",
 		"classVlaues": [{
-			"name": "ebola",
-			"FP": [2, 3]
+			"name": "non-relevant",
+			"FP": ["term1", "term2"]
 		}, {
-			"name": "virusxyz",
-			"FP": [4, 6]
+			"name": "Class_1_name",
+			"FP": ["term3", "term4"]
+		}, {
+			"name": "Class_2_name",
+			"FP": ["term5", "term6"]
 		}]
 	}]
 }
