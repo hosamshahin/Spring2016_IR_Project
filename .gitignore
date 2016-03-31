@@ -1,4 +1,5 @@
 /data
+/predictions
 
 # cache files for sublime text
 *.tmlanguage.cache
