@@ -1,0 +1,245 @@
+30186 naacpbombing
+5020 media
+4515 media naacpbombing
+4224 naacp
+3650 colorado
+3311 fbi
+3206 fbi naacpbombing
+3066 naacp naacpbombing
+2875 coverage
+2837 bombing
+2606 colorado naacpbombing
+2508 white
+2472 coverage naacpbombing
+2438 news
+2397 black
+2127 white naacpbombing
+2114 black naacpbombing
+2075 man
+2027 man naacpbombing
+1765 bombing naacpbombing
+1760 news naacpbombing
+1741 suspect
+1718 amp
+1713 suspect naacpbombing
+1703 bombing colorado
+1657 person
+1651 person naacpbombing
+1645 just
+1615 paris
+1604 looking
+1599 looking naacpbombing
+1595 colorado naacp
+1586 just naacpbombing
+1567 terrorism
+1563 paris naacpbombing
+1512 coverage media
+1503 coverage media naacpbombing
+1488 bombing naacp
+1466 terrorism naacpbombing
+1452 person fbi
+1451 person fbi naacpbombing
+1427 looking fbi
+1425 looking fbi naacpbombing
+1419 amp naacpbombing
+1392 looking person naacpbombing
+1392 looking person fbi naacpbombing
+1392 looking person fbi
+1392 looking person
+1390 whos person naacpbombing
+1390 whos person fbi naacpbombing
+1390 whos person fbi
+1390 whos person
+1390 whos naacpbombing
+1390 whos looking person naacpbombing
+1390 whos looking person fbi naacpbombing
+1390 whos looking person fbi
+1390 whos looking person
+1390 whos looking naacpbombing
+1390 whos looking fbi naacpbombing
+1390 whos looking fbi
+1390 whos looking
+1390 whos fbi naacpbombing
+1390 whos fbi
+1390 whos
+1386 respensable whos person naacpbombing
+1386 respensable whos person fbi naacpbombing
+1386 respensable whos person fbi
+1386 respensable whos person
+1386 respensable whos naacpbombing
+1386 respensable whos looking person naacpbombing
+1386 respensable whos looking person fbi naacpbombing
+1386 respensable whos looking person fbi
+1386 respensable whos looking person
+1386 respensable whos looking naacpbombing
+1386 respensable whos looking fbi naacpbombing
+1386 respensable whos looking fbi
+1386 respensable whos looking
+1386 respensable whos fbi naacpbombing
+1386 respensable whos fbi
+1386 respensable whos
+1386 respensable person naacpbombing
+1386 respensable person fbi naacpbombing
+1386 respensable person fbi
+1386 respensable person
+1386 respensable naacpbombing
+1386 respensable looking person naacpbombing
+1386 respensable looking person fbi naacpbombing
+1386 respensable looking person fbi
+1386 respensable looking person
+1386 respensable looking naacpbombing
+1386 respensable looking fbi naacpbombing
+1386 respensable looking fbi
+1386 respensable looking
+1386 respensable fbi naacpbombing
+1386 respensable fbi
+1386 respensable
+1296 sketch
+1290 sketch naacpbombing
+1274 stories
+1237 colorado naacp naacpbombing
+1224 charliehebdo
+1211 update
+1209 update naacpbombing
+1209 twitter
+1196 charliehebdo naacpbombing
+1175 springs
+1173 massacre
+1172 massacre naacpbombing
+1163 isn
+1161 springs colorado
+1150 let
+1149 springs naacpbombing
+1147 twitter naacpbombing
+1137 springs colorado naacpbombing
+1133 haven
+1132 let naacpbombing
+1121 bombing naacp naacpbombing
+1106 haven naacpbombing
+1094 people
+1089 terrorist
+1079 isn naacpbombing
+1076 heard
+1072 http naacpbombing
+1072 http
+1071 heard naacpbombing
+1031 story
+1017 blacklivesmatter
+1014 bombing colorado naacp
+1011 man colorado
+1007 man colorado naacpbombing
+1004 story naacpbombing
+1002 america
+992 lack
+985 lack naacpbombing
+977 blacklivesmatter naacpbombing
+954 lack coverage
+951 people naacpbombing
+948 lack coverage naacpbombing
+946 usa
+935 silence
+934 usa naacpbombing
+934 like
+925 silence naacpbombing
+920 msnbc
+917 muslims
+914 sketch suspect
+914 msnbc naacpbombing
+911 sketch suspect naacpbombing
+909 explosion
+907 breaking
+894 hoax
+894 black media
+887 sketch fbi
+886 photo naacpbombing
+886 photo
+886 breaking naacpbombing
+883 sketch fbi naacpbombing
+878 hoax naacpbombing
+876 lack media
+875 lack media naacpbombing
+862 lack coverage media naacpbombing
+862 lack coverage media
+858 america naacpbombing
+852 black coverage
+850 apologize
+848 black coverage naacpbombing
+828 lives
+827 suspect fbi
+821 lives naacpbombing
+816 like naacpbombing
+805 suspect fbi naacpbombing
+804 springs naacp
+801 springs colorado naacp
+788 springs naacp naacpbombing
+787 springs colorado naacp naacpbombing
+784 fake
+783 right
+782 explosion naacpbombing
+780 bombing colorado naacpbombing
+779 fake naacpbombing
+772 sketch suspect fbi
+769 sketch suspect fbi naacpbombing
+761 right naacpbombing
+761 forgotten
+760 forgotten naacpbombing
+753 black media naacpbombing
+749 attack
+746 don
+746 bombing colorado naacp naacpbombing
+746 attacks
+743 explosion colorado
+737 lives black
+737 arrested
+735 lives black naacpbombing
+728 haven update naacpbombing
+728 haven update
+717 lives media naacpbombing
+717 lives media
+715 covering
+714 died
+713 attacks naacpbombing
+713 arrested naacpbombing
+711 isn media
+709 isn media naacpbombing
+707 heard twitter naacpbombing
+707 heard twitter
+705 lives coverage naacpbombing
+705 lives coverage
+702 explosion colorado naacpbombing
+701 died naacpbombing
+699 extremists
+697 don naacpbombing
+696 lives lack naacpbombing
+696 lives lack coverage naacpbombing
+696 lives lack coverage
+696 lives lack
+696 lives coverage media naacpbombing
+696 lives coverage media
+695 lives lack media naacpbombing
+695 lives lack media
+695 lives lack coverage media naacpbombing
+695 lives lack coverage media
+691 true
+690 extremists naacpbombing
+690 black coverage media
+689 black coverage media naacpbombing
+688 true naacpbombing
+687 isn coverage naacpbombing
+687 isn coverage
+686 paris colorado
+683 paris colorado naacpbombing
+682 troubled
+681 massacre media naacpbombing
+681 massacre media
+681 isn black naacpbombing
+681 isn black
+680 reminds
+680 haram boko
+680 haram
+680 boko
+679 massacre coverage naacpbombing
+679 massacre coverage
+679 haram naacpbombing
+679 haram boko naacpbombing
+679 boko naacpbombing
