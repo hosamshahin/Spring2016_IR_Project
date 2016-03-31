@@ -8,27 +8,27 @@
 		"Id": "541",
 		"name": "NAACPBombing",
 		"type": "binary",
-		"FP": ["matter", "african"]
+		"FP": ["colorado", "white", "explosion"]
 	}, {
 		"Id": "668",
 		"name": "houstonflood",
 		"type": "binary",
-		"FP": ["matter", "african"]
+		"FP": ["getstupid", "cambodia", "car"]
 	}, {
 		"Id": "700",
 		"name": "wdbj7 shooting ",
 		"type": "binary",
-		"FP": ["matter", "african"]
+		"FP": ["terrorism", "community", "tribute", "victims"]
 	}, {
 		"Id": "686",
 		"name": "Obamacare",
 		"type": "binary",
-		"FP": ["matter", "african"]
+		"FP": ["cern", "antichrist", "abcnews"]
 	}, {
 		"Id": "694",
 		"name": "4thofJuly",
 		"type": "binary",
-		"FP": ["matter", "african"]
+		"FP": ["independenceday", "happy"]
 	}, {
 		"Id": "532",
 		"name": "AirAsia",
