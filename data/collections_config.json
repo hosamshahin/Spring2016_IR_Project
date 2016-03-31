@@ -8,7 +8,7 @@
 		"Id": "541",
 		"name": "NAACPBombing",
 		"type": "binary",
-		"FP": ["colorado", "white", "explosion"]
+		"FP": ["colorado", "white"]
 	}, {
 		"Id": "668",
 		"name": "houstonflood",
