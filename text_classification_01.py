@@ -17,19 +17,19 @@ if __name__ == "__main__":
 
 
     def parse_tweet(line):
-    """
-    Parses a tweet record having the following format collectionId-tweetId<\t>tweetString
-    """
-    fields = line.strip().split("\t")
-    if len(fields) == 2:
-        # The following regex just strips of an URL (not just http), any punctuations,
-        # or Any non alphanumeric characters
-        # http://goo.gl/J8ZxDT
-        text = re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",fields[1]).strip()
-        # remove terms <= 2 characters
-        text = ' '.join(filter(lambda x: len(x) > 2, text.split(" ")))
-        # return tuple of (collectionId-tweetId, text)
-        return (fields[0], text)
+        """
+        Parses a tweet record having the following format collectionId-tweetId<\t>tweetString
+        """
+        fields = line.strip().split("\t")
+        if len(fields) == 2:
+            # The following regex just strips of an URL (not just http), any punctuations,
+            # or Any non alphanumeric characters
+            # http://goo.gl/J8ZxDT
+            text = re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",fields[1]).strip()
+            # remove terms <= 2 characters
+            text = ' '.join(filter(lambda x: len(x) > 2, text.split(" ")))
+            # return tuple of (collectionId-tweetId, text)
+            return (fields[0], text)
 
 
     def Load_tweets(collection_id):
