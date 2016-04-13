@@ -16,15 +16,6 @@ if __name__ == "__main__":
     sqlContext = SQLContext(sc)
 
 
-    def load_config(config_file):
-        """
-        Load collection configuration file.
-        """
-        with open(config_file) as data_file:
-            config_data = json.load(data_file)
-        return config_data
-
-
     def parse_tweet(line):
     """
     Parses a tweet record having the following format collectionId-tweetId<\t>tweetString
@@ -90,6 +81,7 @@ if __name__ == "__main__":
                 file.write("%s %s\n" % (item.freq, ' '.join(item.items)))
 
 
+    config_data = load_config(os.path.join(base_dir , config_file))
     for x in config_data["collections"]:
         tweets = Load_tweets(x["Id"])
         if tweets:

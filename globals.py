@@ -4,4 +4,12 @@ models_dir = os.path.join(data_dir, "models")
 predictions_dir = os.path.join(data_dir, "predictions")
 FP_dir = os.path.join(data_dir, "FPGrowth")
 config_file = "collections_config.json"
-config_data = load_config(os.path.join(base_dir , config_file))
+
+def load_config(config_file):
+    """
+    Load collection configuration file.
+    """
+    with open(config_file) as data_file:
+        config_data = json.load(data_file)
+    return config_data
+
