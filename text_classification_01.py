@@ -81,7 +81,7 @@ if __name__ == "__main__":
                 file.write("%s %s\n" % (item.freq, ' '.join(item.items)))
 
 
-    config_data = load_config(os.path.join(base_dir , config_file))
+    config_data = load_config(config_file)
     for x in config_data["collections"]:
         tweets = Load_tweets(x["Id"])
         if tweets:

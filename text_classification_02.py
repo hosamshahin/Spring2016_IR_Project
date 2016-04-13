@@ -16,7 +16,7 @@ if __name__ == "__main__":
     sqlContext = SQLContext(sc)
 
     # get FP from config file
-    config_data = load_config(os.path.join(base_dir , config_file))
+    config_data = load_config(config_file)
 
     def create_training_data(tweets, freq_patterns):
         # Tweets contains the frequent pattern terms will be considered as positive samples
