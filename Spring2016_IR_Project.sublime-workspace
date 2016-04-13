@@ -26,7 +26,7 @@
 			"file": "Tweets_Classification-V2.ipynb",
 			"settings":
 			{
-				"buffer_size": 20197,
+				"buffer_size": 17959,
 				"line_ending": "Unix"
 			}
 		},
@@ -140,9 +140,7 @@
 	},
 	"expanded_folders":
 	[
-		"/home/hshahin/workspaces/Spring2016_IR_Project",
-		"/home/hshahin/workspaces/Spring2016_IR_Project/data/small_data/predictions/20160331-130022_602_Germanwings",
-		"/home/hshahin/workspaces/Spring2016_IR_Project/data/small_data/z_602"
+		"/home/hshahin/workspaces/Spring2016_IR_Project"
 	],
 	"file_history":
 	[
@@ -351,6 +349,12 @@
 						"settings":
 						{
 							"default_dir": "/home/hshahin/workspaces/code-workout",
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"syncScroll": false,
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -379,6 +383,12 @@
 						],
 						"settings":
 						{
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"syncScroll": false,
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
@@ -395,19 +405,25 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 20197,
+						"buffer_size": 17959,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11709,
-								11709
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"origPos":
+							[
+								0.0,
+								4320.0
+							],
+							"syncScroll": false,
 							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -438,6 +454,12 @@
 						],
 						"settings":
 						{
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"syncScroll": false,
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -460,12 +482,18 @@
 						"selection":
 						[
 							[
-								382,
-								382
+								345,
+								345
 							]
 						],
 						"settings":
 						{
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"syncScroll": false,
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
