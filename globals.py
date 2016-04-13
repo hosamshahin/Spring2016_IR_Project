@@ -1,3 +1,5 @@
+import os
+
 base_dir = "~/Spring2016_IR_Project/data/"
 data_dir = os.path.join(base_dir , "small_data")
 models_dir = os.path.join(base_dir, "models")
