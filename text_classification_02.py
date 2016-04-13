@@ -1,5 +1,5 @@
 from __future__ import print_function
-import gobals
+import globals
 import codecs, re, json, os, time
 from pyspark import SparkContext, SparkConf
 from pyspark.mllib.fpm import FPGrowth
