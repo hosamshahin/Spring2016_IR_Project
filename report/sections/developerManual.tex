@@ -1,12 +1,33 @@
 \chapter{Developer Manual}\label{ch:developerManual}
+%\studentComment{more concrete instructions such as on how the code is being developed, module overview, and how the data was processed, etc.}
+%\studentComment{collaborate more on the design and implementation steps}
 
-\section{Techniques}
+The developer manual will grow and evolve with the project. It documents the tools we are currently using, not tools we are considering for future steps.
+
+\section{Algorithms}
 
 \subsection{Frequent Pattern Mining}
+Our methodology for constructing training data is based on frequent pattern mining algorithm. \href{https://spark.apache.org/docs/1.6.0/mllib-frequent-pattern-mining.html}{Spark.mllib} version 1.6 provides a parallel implementation of FP-growth, a popular algorithm to mining frequent itemsets. 
+\subsection{Logistic Regression}
+Logistic regression is a popular method to predict a binary response. It is a special case of \href{https://en.wikipedia.org/wiki/Generalized_linear_model}{Generalized Linear models} that predicts the probability of the outcome. For more background and more details about the implementation, refer to the documentation of the \href{https://spark.apache.org/docs/1.6.0/mllib-linear-methods.html#logistic-regression}{logistic regression in spark.mllib}.
+\section{Environment Setup}
 
-\subsection{Na{\"i}ve Bayes}
+\subsection{Dependencies}
 
-\section{}
+\subsubsection{Java}
+You will need the latest version of Java, which at the time of this writing is Java Version 8 Update 73. Download and installation instructions for your environment can be found here:
+
+\href{https://java.com/en/download/}{https://java.com/en/download/}
+
+\subsubsection{Python}
+You will need Python 2.7.9 (it may work with newer versions of the 2.7 line, but we have not tested it). Download and installation instructions for your environment can be found here:
+
+\href{https://www.python.org/downloads/release/python-279/}{https://www.python.org/downloads/release/python-279/}
+
+\subsection{Apache Spark}
+This system is built on Apache Spark 1.6.0, which can be downloaded here:
+
+\href{http://spark.apache.org/downloads.html}{http://spark.apache.org/downloads.html}
 
 % Here is the introduction. The next chapter is chapter~\ref{ch:ch2label}.
 

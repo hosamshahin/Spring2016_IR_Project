@@ -1,6 +1,12 @@
 \chapter{Future Work}\label{ch:futureWork}
 
-Chapter stub. We will expand this section as our project progresses.
+There are a few points with our work that need to be accomplished soon to provide the other groups working with this project some useful information. First and foremost, we are in a position to provide the other groups information regarding the precision of the small collections. This will be useful for them to know if they should be working with the entirety of the collections or only a subset that we deem as related to the small collection and the event it is supposed to encapsulate.
+
+Another point that we need to work towards is transitioning our work from the VM we created initially over to the Hadoop cluster now. The cluster has been upgraded with the necessary version of Spark that will allow us to perform Frequent Pattern Mining (FPM) analyses to build training sets for collections of documents.
+
+Since we can now transition to the cluster, we also need to update our scripts to interact directly with HBase instead of writing to intermediary files that need to be loaded in manually.
+
+Further reaching future work would be combining multiple classifiers, trained on different aspects of the same training set, into a single classifier that may provide a more robust prediction than any of the single classifiers on their own.
 
 % Here is the introduction. The next chapter is chapter~\ref{ch:ch2label}.
 

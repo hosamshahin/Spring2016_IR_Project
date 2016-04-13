@@ -1,15 +1,20 @@
 \chapter{Plan}\label{ch:plan}
+%\studentComment{Fix a lack of description on the management of the team work}
+%\studentComment{Provide breakdown of individuals contributions}
 
-Please see table \ref{table:plan} for the weekly breakdown of work.
+Our work on this project will happen in two phases. In the first phase, we will attempt to create an initial prototype working with a small set of sample data. This phase will be accomplished mainly in our own external environment so that we can experiment more freely with the technologies to gain a better understanding of how they work and interact together. 
+
+Phase two of the project will involve taking the work done in phase one and expanding it out to the other small sets of data provided to us, and eventually to larger data sets. We will explore other potential techniques as we deem them necessary. This phase will also include a definition and implementation of an evaluation approach. Phase one is small enough that we feel a subjective evaluation is sufficient, but as we expand it will become essential to have a more concrete, quantitative measure of effectiveness.
+
+Please see Table \ref{table:plan} for a weekly breakdown of work.
 
 \rowcolors{2}{gray!25}{white}
 \begin{table}
 \caption{Weekly breakdown of work to be done.}\label{table:plan}
 \begin{tabularx}{155mm}{|>{\setlength\hsize{.2\hsize}\setlength\linewidth{\hsize}}X|>{\setlength\hsize{.3\hsize}\setlength\linewidth{\hsize}}X|>{\setlength\hsize{1.5\hsize}\setlength\linewidth{\hsize}}X|}
 	\rowcolor{gray!50}
+%\multicolumn{3}{|c|}{Classification of the criticel point $(0,0)$ of $x'=Ax,|\mathbf{A}|\not=0$.}\\
 \hline
-% \multicolumn{3}{|c|}{Classification of the criticel point $(0,0)$ of $x'=Ax,|\mathbf{A}|\not=0$.}\\
-% \hline
 \centering Weeks & \centering End Date & Tasks \\
 \hline
 
@@ -26,7 +31,7 @@ Week 2
 &
 \begin{itemize}
 \item Understanding the classification task
-\item Read about \href{https://canvas.vt.edu/courses/21271/files/folder/2015/Tutorials?preview=390175}{Hadoop streaming using python}
+\item Read about \href{https://canvas.vt.edu/courses/21271/files/folder/2015/Tutorials?preview=390175}{Hadoop streaming using Python}
 \end{itemize}\\
 \hline
 
@@ -34,14 +39,14 @@ Week 3
 &
 5 Feb.
 &
-Start online tutorials about Hadoop and Apache Spark.\\
+Start online tutorials about Hadoop and Apache Spark.\cite{pythonSparkTutorial}\cite{solrTeamTutorial}\\
 \hline
 
 Week 4
 &
 12 Feb.
 &
-Continue online tutorials about Hadoop and Apache Spark.\\
+Continue online tutorials about Hadoop and Apache Spark.\cite{hbaseShellTutorial}\\
 \hline
 
 Week 5
@@ -94,14 +99,14 @@ Week 9
 &
 18 March
 &
-\textbf{Phase 2 will include tweets and web pages:} \
+\textbf{Phase 2 will include tweets and webpages:} \
 
-\textbf{Once Spark on the cluster is updated to version 1.6 we will do the following:}
+\textbf{Once Spark on the cluster is updated to version 1.5 we will do the following:}
 
 \begin{itemize}
 \item Run our methodology to classify the tweets on the cluster.
-\item Apply the Frequent Pattern methodology on the cleaned pages provided by collection management team.
-\item Develop Hbase interface through which the classifier prediction output will be saved on Hbase.
+\item Apply the Frequent Pattern methodology on the cleaned webpages provided by Collection Management team.
+\item Develop HBase interface through which the classifier prediction output will be saved on HBase.
 \end{itemize}\\
 \hline
 
@@ -116,21 +121,35 @@ Week 11
 &
 1 April
 &
-Train multiple classifiers and pick the best model per collection. \\
+Discuss with TAs and Solr team to finalize HBase schema. \\
 \hline
 
 Week 12
 &
 8 April
 &
-More research on Hyper-parameter optimization. Check the feasibility of Integrating hyper parameters optimization library \cite{bergstra2013hyperopt} output with Spark. \\
+Move functioning prototype over to newly updated Hadoop cluster. Train multiple classifiers and pick the best model per collection. \\
 \hline
 
-Week 13-15
+Week 13
 &
-TBD
+15 April
+&
+More research on hyper-parameter optimization. Check the feasibility of Integrating hyper-parameters optimization library \cite{bergstra2013hyperopt} output with Spark. \\
+\hline
+
+Week 14
+&
+22 April
 &
 Search for known approaches to select the most representative data samples for each collection. Then check whether training a classifier using these data samples will enhance the performance or not. \\
+\hline
+
+Week 15
+&
+29 April
+&
+Final evaluations and modifications to the system. \\
 \hline
 
 \end{tabularx}

@@ -1,8 +1,8 @@
 \chapter[Requirements, Design, and Implementation]{Requirements, Design, And\\ Implementation}\label{ch:ReqDesignImp}
 \section{Requirements}
-As we have previously mentioned, the role of our team's project positions us squarely between the the Collection Management team and the Solr team when discussing the overall workflow of the system. Based upon group discussions in a classroom setting, it was decided what information that the Collection Management team would provide to the other teams that need to work with cleaned tweet data. A full specification of these decisions can be found by viewing the Collection Management team's report, however we will briefly discuss the points that were relevant to us.
+Based upon group discussions in a classroom setting, it was decided what information that the Collection Management team would provide to the other teams that need to work with cleaned tweet data. A full specification of these decisions can be found by viewing the Collection Management team's report; however we will briefly discuss the points that were relevant to us.
 
-Given the cleaned tweet data from Collection Management, we our team will then be able to perform the methodologies we describe later to classify whether a document is relevant or irrelevant to a given class. A detailed layout of the project with our interactions highlighted is provided by Figure \ref{fig:design}.
+Given the cleaned tweet data from Collection Management, our team will then be able to perform the methodologies we describe later to classify whether a document is relevant or non-relevant to a given class. A detailed layout of the project with our interactions highlighted is provided by Figure \ref{fig:design}.
 
 We will then place our classification information in the HBase datastore to mark the relevance of each document. The Solr team will then index this class information that we provide, allowing for more robust query results and more useful facets to be created.
 
@@ -15,52 +15,83 @@ We will then place our classification information in the HBase datastore to mark
 \section{Design}
 Our current design is based primarily off of recommendations from the GRAs assisting the class. We have also taken substantial input from last year's Classification team \cite{cui2015classification} and the Professor.
 
-We have designed our current solution around pulling training data from and testing on a small collection of around 100,000 tweets. This was originally going to be performed on the small collection that was assigned to our team, \texttt{\#germanwings}. However, due to some changes and discussion among the other teams, we have decided to continue with designing and testing our solution using a cleaned dataset provided by the Collection Management team. However this dataset was not made available until after our current solution was mostly implemented using our original small dataset. Therefore for the rest of this document we will be using the small dataset \texttt{z\_602}, \texttt{\#germanwings}. All future work will be done using cleaned data from the collection management team.
+We have designed our current solution around pulling training data from and testing on a small collection of around 100,000 tweets. This was originally going to be performed on the small collection that was assigned to our team, \texttt{\#germanwings}. However, due to some changes and discussion among the other teams, we have decided to continue with designing and testing our solution using a cleaned dataset provided by the Collection Management team. However this dataset was not made available until after our current solution was mostly implemented using our original small dataset. Therefore for the rest of this document we will be using the small dataset \texttt{z\_602}, \texttt{\#germanwings}. All future work will be done using cleaned data from the Collection Management team.
+
+\section{Implementation}
+Our implementation can be easily laid out in a step by step workflow, with only one step requiring true manual input and evaluation from a person. Figure \ref{fig:overview} illustrates the general flow of data that we have implemented thus far. Below we will discuss each step in detail.
+
+Our methodology primarily revolves around building a training set. This training set will be used for training a machine learning model, a.k.a. a classifier.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[scale=.65]{figures/design_flow_chart.png}
-    \caption{High level overview of the flow of data through the system.}\label{fig:overview}
+    \caption{High level overview of the flow of data through the classification system.}\label{fig:overview}
 \end{figure}
 
-\section{Implementation}
-Our implementation can be easily laid out in a step by step workflow, with only one step requiring true manual input and evaluation from a person. Below we will discuss each step in detail.
-
-Our methodology primarily revolves around building a training set. This training set will be used for training a machine learning model, a.k.a.\ a classifier.
-
 \subsection{Environment Set--Up}
-Our group decided to avoid working directly on the cluster to allow us full administrative rights to a machine, allowing us to set up and test different configurations and algorithms than what might currently be supported by the Hadoop cluster being used for class.
+Our group decided to avoid working directly on the cluster, granting us full administrative rights to a machine, which allowed us to set up and test different configurations and algorithms beyond what might currently be supported by the Hadoop cluster being used for class.
 
-A prime example, and the primary motivating factor for our choice was our decision to use Frequent Pattern Mining (FPM) in the construction of our training sets. The cluster provided for the class is currently running Spark version 1.2.0, FPM is not supported by Spark until version 1.5.0. Since FPM was a methodology suggested by the GRAs, and they assured us that they could upgrade the cluster to a more current version of Spark, we decided to proceed with this method.
+A prime example, and the primary motivating factor for our choice, was our decision to use Frequent Pattern Mining (FPM) in the construction of our training sets. The cluster provided for the class was running Spark version 1.2.0, but FPM is not supported by Spark until version 1.5.0. Since FPM was a methodology suggested by the GRAs, and they assured us that they could upgrade the cluster to a more current version of Spark, we decided to proceed with this method.
 
-Due to time constraints, we created a Debian Virtual Machine with sufficient specs to begin writing and testing our methodology. This machine is hosted on a VMware vSphere cluster and has been assigned 32 GB of RAM, 16 processor cores, and 40 GB of storage. This has proven to be more than adequate for the testing that we have performed on our small data set.
+Due to time constraints, we created a Debian Virtual Machine with sufficient specs to begin writing and testing our methodology. This machine is hosted on a VMware vSphere cluster that belongs to the Virginia Tech IT Security Office/Lab. Since one of the group members works in this lab, we were able to provision this VM. It has been assigned 32 GB of RAM, 16 processor cores, and 40 GB of storage. This has proven to be more than adequate for the testing that we have performed on our small data set.
 
-As of the time of this writing, we are still waiting for the GRAs to upgrade the Spark instance on the full cluster, allowing us and the the other groups to make full use of our methods.
+The Hadoop cluster has now been upgraded to Spark 1.5.0 allowing us to transition our code and methods over and work directly with the HBase instance. As this was a recent change, we are still in the process of this transition and cannot report on what effect it will have, i\. e\. whether there are any issues encountered that break our implementation.
 
 \subsection{Building the Training Data}
-In order to begin the classification process we have to pull out and determine a set of training data to use for the machine learning classification algorithm. In order to do this, we assume that we are working with data that has been cleaned of profanity and non-printable characters.
+In order to begin the classification process we have to prepare a set of training data to use for the machine learning classification algorithm. In order to do this, we assume that we are working with data that has been cleaned of profanity and non-printable characters.
 
-For our methodology we then need to take the content of each tweet as a string and tokenize it. This means that we will remove any duplicate words and have the result be a set of the vocabulary in the tweet. At this stage we also remove any stop words that are in the vocabulary to make sure our algorithms in the next phase are not skewed by taking stop words into account. During this phase we also strip the \# from any hashtags that are present in the tweet.
+For our methodology we then need to take the content of each tweet and webpage as a string and tokenize it. This means that we will remove any duplicate words and have the result be a set of the vocabulary in the tweet (or webpage). At this stage we also remove any stop words that are in the vocabulary to make sure our algorithms in the next phase are not skewed by taking stop words into account. During this phase we also strip the \# from any hashtags that are present in the tweet.
 
-In our initial design and testing we did not yet have access to cleaned tweets from the collection management team, so we worked primarily to build the methodology that would be used once those tweets became available. Therefore some of the steps mentioned previously, such as the removal of the stop words and the removal of the \# from hashtags are unnecessary when working with the data provided by Collection Management in HBase.
+In our initial design and testing we did not yet have access to cleaned tweets and webpages from the Collection Management team, so we worked primarily to build the methodology that would be used once those resources became available. Therefore, some of the steps mentioned previously, such as the removal of the stop words and the removal of the \# from hashtags are unnecessary when working with the data provided by Collection Management in HBase.
 
-The next step in our algorithm involves the use of Frequent Pattern Mining (FPM) to determine the most frequently used patterns of words in the tweet text. FPM looks at the set of existing vocabulary for each text and determines which tokens appear together within a tweet's vocabulary most often.
+The next step in our algorithm involves the use of Frequent Pattern Mining (FPM) to determine the most frequently used patterns of words in the text of a series of tweets or webpages. FPM looks at the set of existing vocabulary for each text and determines which tokens appear together within a tweet's vocabulary most often.
 
-This is the stage where manual intervention in necessary. We look at a file containing a sorted list of all the frequent patterns, from this we choose a set of features to train on. In our attempts at training a classifier for our small data collection, we chose to select a frequent pattern of four words. This was essentially an arbitrary choice, but we believe that it strikes a good balance between being too specific and missing some relevant tweets and being too broad and pulling in a number of irrelevant tweets.
+This is the stage where manual intervention in necessary. We look at a file containing a sorted list of all the frequent pattern;, from this we choose a set of features to train on. In our attempts at training a classifier for our small data collection, we chose to select a frequent pattern of four words. This was essentially an arbitrary choice, but we believe that it strikes a good balance between being too specific and missing some relevant tweets and being too broad and pulling in a number of irrelevant tweets.
 
-At this stage we need to create positive and negative training samples. To do this, we pull a random subset of tweets that contain our frequent pattern and classify those as positive samples. For our negative sample we pull a random subset of tweets that do not contain our frequent pattern.
+At this stage we need to create positive and negative training samples. To do this, we pull a random subset of tweets that contain our frequent pattern and classify those as positive samples. For our negative sample we pull a random subset of tweets that do not contain our frequent pattern. To ensure that this labeling is at least mostly correct, we will inspect both the positive and negative training sets (or a portion of them) to confirm that each set is composed of either relevant tweets and webpages or non-relevant ones as appropriate. If in this inspection we find that the choice of frequent pattern has generated a poor training set, we will choose a different frequent pattern and go through the process again.
+
+%\todo[inline]{Have you checked whether the results of using FPM to determine labeling of tweets as positive or negative is correct?  That is, did you manually check (some) of the label assignments?  Will you use the same approach for webpages too?}For our negative sample we pull a random subset of tweets that do not contain our frequent pattern.
 
 \subsection{Training the Classifier}
 
 We then use the sets of positive and negative samples to train a classifier. We are currently using a logistic regression classifier in our implementation, primarily due to its ease of implementation in Spark.
 
-As the project progresses we plan to attempt using several different classifiers and comparing their effectiveness at classifying our data.
+FPM allows us to develop a training set by filtering the tweets and webpages down to some subset of those that do and do not contain the selected frequent patterns. We take these subsets as the positive training data and the negative training data.
+
+At this point we then feed the selected documents into the classifier; this step uses all the words in each document of the training data, not just the words used for FPM. As we progress we intend to try using several different classifiers to determine which one provides us with the best results.
+
+%As the project progresses we \todo[inline]{When you try other classifiers, will you use the same training data?  When you use LR and those others, what are the features - just those from FPM, or all words in the labeled documents?}plan to attempt using several different classifiers and comparing their effectiveness at classifying our data.
 
 \subsection{Predicting the Class}
 
-After training the classifier, we apply the classifier to all the tweets across our small data collection. This results in a binary scoring for each tweet as relevant or irrelevant to the collection based upon the training data we selected.
+After training the classifier, we apply the classifier to all the tweets across our small data collection. This results in a binary scoring for each tweet as relevant or non-relevant to the collection based upon the training data we selected.
 
-We can evaluate the accuracy of our model by judging how well it classified some of the data that could have been in our positive or negative samples. We currently do not have this well implemented, but plan to have this evaluation completed before the next report.
+\subsection{Evaluating the Classifier}
+
+We can evaluate the accuracy of our model by judging how well it classifies some of the data that could have been in our positive or negative samples. This is the most intuitive evaluation however it requires a great deal of manual effort to perform. We need to pull out a sampling of classified data and look through it manually; marking whether or not the classification was correct.
+
+Another evaluation that we can perform looks at how well each small collection does at being relevant to the topic at hand. If a large number of the documents in the collection are classified as non-relevant, than the collection as a whole has not done a good job capturing the event in question.
+
+Finally, we need to perform an evaluation of how well our method of using FPM to determine the training documents works. This is much like the first evaluation in that it can be very manual. We will need to dump the generated training sets out to files and then manually decide whether a given set has all (or primarily) relevant or non-relevant documents, as appropriate.
+
+
+%\todo[inline]{When you mention about not well implemented, does that mean: you are not sure how to do this, you have not done it, you did it but had problems, etc.? Where is the evaluation plan detailed?}We currently do not have this well implemented, but plan to have this evaluation completed before the next report.
+
+\subsection{Interfacing with HBase}
+
+We are currently able to process the six small data files and determine whether or not each tweet in the collection is relevant or irrelevant. However, at the time of this writing, our python scripts are unable to write data directly back to HBase (but that will change soon now that the cluster's software has been updated). To work around this, we have made use of HBase's ImportTSV functionality to manually put our processed data into the table.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=.65]{figures/hbase-data.png}
+    \caption{An example .tsv file (right) that has been imported into HBase. The values of the highlighted entries are shown as outputs of HBase's "get" command on the left.}\label{fig:hbase-data}
+\end{figure}
+
+As shown in Figure \ref{fig:hbase-data}, for each of the data sets we have produced a .tsv file with two columns: one containing the tweet id (which serves as the row key in HBase), and one containing either 1.0 or 0.0 depending on whether the tweet was relevant or irrelevant (respectively) to the category. These six files have been imported into HBase and are ready for use by the other project teams. Within HBase, we have created a column family named "classification." Within our column family, we only have need of one column, named "class." This column is where the 1.0 or 0.0 for each document in the database will be stored for access by other teams.
+
+In the future, we plan to further automate the data processing system by having our python scripts read cleaned data provided by the collection management team straight from the HBase table, and writing our results right back to the table as they are processed. This will enable more efficient classification of any future data that gets indexed into the system.
+
+
 
 
 % Here is the introduction. The next chapter is chapter~\ref{ch:ch2label}.
