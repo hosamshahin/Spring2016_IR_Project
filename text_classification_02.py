@@ -1,4 +1,5 @@
 from __future__ import print_function
+import gobals
 import codecs, re, json, os, time
 from pyspark import SparkContext, SparkConf
 from pyspark.mllib.fpm import FPGrowth
@@ -11,14 +12,6 @@ from pyspark.ml.evaluation import BinaryClassificationEvaluator
 
 
 if __name__ == "__main__":
-    base_dir = "~/Spring2016_IR_Project/data/"
-    data_dir = os.path.join(base_dir , "small_data")
-    models_dir = os.path.join(data_dir, "models")
-    predictions_dir = os.path.join(data_dir, "predictions")
-    FP_dir = base_dir + "FPGrowth/"
-    config_file = "collections_config.json"
-    config_data = load_config(os.path.join(base_dir , config_file))
-
     sc = SparkContext(appName="BinaryClassificationMetricsExample")
     sqlContext = SQLContext(sc)
 
@@ -53,6 +46,7 @@ if __name__ == "__main__":
           .withColumnRenamed("_4","label"))
         training_data = positive_tweets.unionAll(negative_tweets)
         return training_data
+
 
     def train_lg(training_data, collection):
         # Configure an ML pipeline, which consists of the following stages: hashingTF, idf, and lr.
@@ -91,12 +85,14 @@ if __name__ == "__main__":
         training_error = selected.filter(lambda (label, prediction): label != prediction).count() / float(tweets.count())
         print("Training Error = " + str(training_error))
 
+
     def create_testing_data(tweets):
         testing_data = (tweets
                         .rdd
                         .map(lambda x: Row(id=x[0], filtered=x[2]))
                         .toDF())
         return testing_data
+
 
     def lg_prediction(lg_model, testing_data, collection):
         # Perfom predictions on test documents and save columns of interest to a file.
@@ -110,6 +106,7 @@ if __name__ == "__main__":
             with open(prediction_path, 'a') as f:
                 f.write(data.id+"\t"+str(data.probability[1])+"\n")
         selected.foreach(saveData)
+
 
     for x in config_data["collections"]:
         tweets = Load_tweets(x["Id"])

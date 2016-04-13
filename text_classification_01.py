@@ -1,4 +1,5 @@
 from __future__ import print_function
+import gobals
 import codecs, re, json, os, time
 from pyspark import SparkContext, SparkConf
 from pyspark.mllib.fpm import FPGrowth
@@ -11,14 +12,6 @@ from pyspark.ml.evaluation import BinaryClassificationEvaluator
 
 
 if __name__ == "__main__":
-    base_dir = "~/Spring2016_IR_Project/data/"
-    data_dir = os.path.join(base_dir , "small_data")
-    models_dir = os.path.join(data_dir, "models")
-    predictions_dir = os.path.join(data_dir, "predictions")
-    FP_dir = base_dir + "FPGrowth/"
-    config_file = "collections_config.json"
-    config_data = load_config(os.path.join(base_dir , config_file))
-
     sc = SparkContext(appName="BinaryClassificationMetricsExample")
     sqlContext = SQLContext(sc)
 
@@ -30,7 +23,6 @@ if __name__ == "__main__":
         with open(config_file) as data_file:
             config_data = json.load(data_file)
         return config_data
-
 
 
     def parse_tweet(line):
@@ -70,7 +62,6 @@ if __name__ == "__main__":
         remover = StopWordsRemover(inputCol="words", outputCol="filtered")
         tweets = remover.transform(tweets)
         return tweets
-
 
 
     # Frequent pattern mining expect each row to have a unique set of tokens
