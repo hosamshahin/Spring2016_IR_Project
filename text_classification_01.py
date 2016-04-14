@@ -1,12 +1,14 @@
 from __future__ import print_function
 import globals
+from globals import load_config
 import codecs, re, json, os, time
 from pyspark import SparkContext, SparkConf
 from pyspark.mllib.fpm import FPGrowth
 from pyspark.sql import SQLContext, Row
 from pyspark.ml import Pipeline
 from pyspark.ml.classification import LogisticRegression
-from pyspark.ml.feature import HashingTF, Tokenizer, IDF, StopWordsRemover
+from pyspark.ml.feature import HashingTF, Tokenizer, IDF
+# , StopWordsRemover
 from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
 
@@ -33,7 +35,7 @@ if __name__ == "__main__":
 
 
     def Load_tweets(collection_id):
-        tweets_file = os.path.join(data_dir , "z_" + collection_id)
+        tweets_file = os.path.join(globals.data_dir , "z_" + collection_id)
         print("Loading " + tweets_file)
         if not os.path.isdir(tweets_file):
             print(tweets_file + " folder doesn't exist.")
@@ -50,8 +52,8 @@ if __name__ == "__main__":
     def preprocess_tweets(tweets):
         tokenizer = Tokenizer(inputCol="text", outputCol="words")
         tweets = tokenizer.transform(tweets)
-        remover = StopWordsRemover(inputCol="words", outputCol="filtered")
-        tweets = remover.transform(tweets)
+        # remover = StopWordsRemover(inputCol="words", outputCol="filtered")
+        # tweets = remover.transform(tweets)
         return tweets
 
 
@@ -81,7 +83,7 @@ if __name__ == "__main__":
                 file.write("%s %s\n" % (item.freq, ' '.join(item.items)))
 
 
-    config_data = load_config(config_file)
+    config_data = load_config(globals.config_file)
     for x in config_data["collections"]:
         tweets = Load_tweets(x["Id"])
         if tweets:

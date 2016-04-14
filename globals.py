@@ -1,6 +1,6 @@
-import os
+import os, json
 
-base_dir = "~/Spring2016_IR_Project/data/"
+base_dir = "/home/cs5604s16_cl/Spring2016_IR_Project/data"
 data_dir = os.path.join(base_dir , "small_data")
 models_dir = os.path.join(base_dir, "models")
 predictions_dir = os.path.join(base_dir, "predictions")
