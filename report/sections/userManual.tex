@@ -73,7 +73,7 @@ To go further in using the script, you may need to make modifications to the \te
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/collection_config}
     \caption{Collections configuration file}\label{fig:collection_config}
-    \foxComment{The FP entries seem odd.
+    \foxComment{The FP entries seem odd. (HS: I've changed the configuration file image with a new one that has more meaningful terms)
 
 Was there overfitting to an odd positive set?}
 \end{figure}
@@ -93,7 +93,13 @@ You should now inspect the file for the tokens frequently found together. Look f
 
 Take the pattern and copy it as the value of ``FP'' in the configuration file.
 
-\foxComment{Can you give examples?}
+\begin{figure}[th!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/Germanwings_FP.png}
+    \caption{Frequent Patterns Mining algorithm output file for Germanwings collection}\label{fig:collection_config}
+\end{figure}
+
+\foxComment{Can you give examples? (HS: this is an example of FPM output of Germainwings tweets collection)}
 
 \subsection{Building a Training Set}
 
@@ -108,6 +114,43 @@ Further progression through the script will actually use the training data const
 \subsection{Running the Classifier}
 
 Finally, apply the classification model to our test data and provide a prediction of relevance (1.0) or non-relevance (0.0) for each tweet in the test data. This data can be found in the \texttt{predictions} directory and has the same name formatting as the frequent pattern output files.
+
+\foxComment{HS: Figure~\ref{fig:histograms} shows the different histograms for the small data sets where higher probability means more likly a tweet to be relavant to the collection}
+
+\begin{figure}[t!] % "[t!]" placement specifier just for this example
+	\begin{subfigure}{0.50\textwidth}
+		\includegraphics[width=\linewidth]{figures/Germanwings.png}
+		\caption{Germanwings} \label{fig:a}
+	\end{subfigure}\hspace*{\fill}
+	\begin{subfigure}{0.50\textwidth}
+		\includegraphics[width=\linewidth]{figures/NAACPBombing.png}
+		\caption{NAACPBombing} \label{fig:b}
+	\end{subfigure}
+
+	\medskip
+	\begin{subfigure}{0.50\textwidth}
+		\includegraphics[width=\linewidth]{figures/Obamacare.png}
+		\caption{Obamacare} \label{fig:c}
+	\end{subfigure}\hspace*{\fill}
+	\begin{subfigure}{0.50\textwidth}
+		\includegraphics[width=\linewidth]{figures/wdbj7shooting.png}
+		\caption{wdbj7shooting} \label{fig:d}
+	\end{subfigure}
+
+	\medskip
+	\begin{subfigure}{0.50\textwidth}
+		\includegraphics[width=\linewidth]{figures/houstonflood.png}
+		\caption{houstonflood} \label{fig:e}
+	\end{subfigure}\hspace*{\fill}
+	\begin{subfigure}{0.50\textwidth}
+		\includegraphics[width=\linewidth]{figures/fourthofJuly.png}
+		\caption{4thofJuly} \label{fig:f}
+	\end{subfigure}
+
+	\caption{Histograms for the small collections of tweets } \label{fig:histograms}
+\end{figure}
+
+A cross-reference to Figure~\ref{fig:histograms}, and a cross-reference to Subfigure~\ref{fig:e}.
 
 % Here is the introduction. The next chapter is chapter~\ref{ch:ch2label}.
 

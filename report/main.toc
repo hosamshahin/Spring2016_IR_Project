@@ -52,32 +52,32 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.2}Selecting a Frequent Pattern}{12}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}Building a Training Set}{13}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.3}Building a Training Set}{14}{subsection.4.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.4}Training a Classifier}{13}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.4}Training a Classifier}{14}{subsection.4.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.5}Running the Classifier}{14}{subsection.4.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Developer Manual}{15}{chapter.5}
+\contentsline {chapter}{\numberline {5}Developer Manual}{16}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Algorithms}{15}{section.5.1}
+\contentsline {section}{\numberline {5.1}Algorithms}{16}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Frequent Pattern Mining}{15}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.1}Frequent Pattern Mining}{16}{subsection.5.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Logistic Regression}{15}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.2}Logistic Regression}{16}{subsection.5.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Environment Setup}{15}{section.5.2}
+\contentsline {section}{\numberline {5.2}Environment Setup}{16}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Dependencies}{16}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}Dependencies}{17}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Java}{16}{subsubsection*.18}
+\contentsline {subsubsection}{Java}{17}{subsubsection*.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Python}{16}{subsubsection*.19}
+\contentsline {subsubsection}{Python}{17}{subsubsection*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Apache Spark}{16}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Apache Spark}{17}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Plan}{17}{chapter.6}
+\contentsline {chapter}{\numberline {6}Plan}{18}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusion}{20}{chapter.7}
+\contentsline {chapter}{\numberline {7}Conclusion}{21}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Future Work}{21}{chapter.8}
+\contentsline {chapter}{\numberline {8}Future Work}{22}{chapter.8}

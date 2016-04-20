@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.30)  20 APR 2016 14:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.30)  20 APR 2016 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1336,14 +1336,19 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
-))
+)
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
+))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+\c@subfigure=\count322
+\c@subtable=\count323
 )
 (./setup/hyphenations.tex) (./setup/macros.tex
-\c@currexactr=\count322
-\c@endexactr=\count323
-\c@exa=\count324
+\c@currexactr=\count324
+\c@endexactr=\count325
+\c@exa=\count326
 ) (./main.sty)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -1354,7 +1359,11 @@ Package biblatex Info: ... file 'english.lbx' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2013/11/25 v2.8a biblatex localization (PK/JW/AB)
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `fig:collection_config' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -1373,7 +1382,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 23.
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 23.
@@ -1384,16 +1393,16 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count325
+\scratchcounter=\count327
 \scratchdimen=\dimen219
 \scratchbox=\box41
-\nofMPsegments=\count326
-\nofMParguments=\count327
+\nofMPsegments=\count328
+\nofMParguments=\count329
 \everyMPshowfont=\toks60
-\MPscratchCnt=\count328
+\MPscratchCnt=\count330
 \MPscratchDim=\dimen220
-\MPnumerator=\count329
-\makeMPintoPDFobject=\count330
+\MPnumerator=\count331
+\makeMPintoPDFobject=\count332
 \everyMPtoPDFconversion=\toks61
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1480,7 +1489,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count331
+\c@section@level=\count333
 )
 LaTeX Info: Redefining \ref on input line 23.
 LaTeX Info: Redefining \pageref on input line 23.
@@ -1490,7 +1499,7 @@ LaTeX Info: Redefining \nameref on input line 23.
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-\c@lstlisting=\count332
+\c@lstlisting=\count334
  (./sections/frontpage.tex
 <figures/vt-logo.png, id=159, 1204.5pt x 258.9675pt>
 File: figures/vt-logo.png Graphic file (type png)
@@ -1588,7 +1597,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3]
 Chapter 3.
-<figures/data_flow.png, id=254, 586.44093pt x 356.0803pt>
+<figures/data_flow.png, id=258, 586.44093pt x 356.0803pt>
 File: figures/data_flow.png Graphic file (type png)
 
 <use figures/data_flow.png>
@@ -1607,7 +1616,7 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [4
 
 ]
-<figures/design_flow_chart.png, id=261, 555.57562pt x 508.14844pt>
+<figures/design_flow_chart.png, id=265, 555.57562pt x 508.14844pt>
 File: figures/design_flow_chart.png Graphic file (type png)
 
 <use figures/design_flow_chart.png>
@@ -1634,7 +1643,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7] <figures/hbase-data.png, id=278, 670.75594pt x 310.91156pt>
+[7] <figures/hbase-data.png, id=282, 670.75594pt x 310.91156pt>
 File: figures/hbase-data.png Graphic file (type png)
 
 <use figures/hbase-data.png>
@@ -1689,7 +1698,7 @@ en the \T1/pcr/m/n/10.95 Tweets_Classification-V2.ipynb
  []
 
 
-<figures/IPython_Tweet_Classification.png, id=306, 1155.31625pt x 1270.7475pt>
+<figures/IPython_Tweet_Classification.png, id=310, 1155.31625pt x 1270.7475pt>
 File: figures/IPython_Tweet_Classification.png Graphic file (type png)
 
 <use figures/IPython_Tweet_Classification.png>
@@ -1702,7 +1711,7 @@ Overfull \hbox (7.02649pt too wide) in paragraph at lines 70--71
 -i-fi-ca-tions to the \T1/pcr/m/n/10.95 collections_config.json
  []
 
-<figures/collection_config.png, id=308, 526.96875pt x 641.39626pt>
+<figures/collection_config.png, id=312, 526.96875pt x 641.39626pt>
 File: figures/collection_config.png Graphic file (type png)
 
 <use figures/collection_config.png>
@@ -1728,13 +1737,77 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [12 <./figures/IPython_Tweet_Classification.png>]
+<figures/Germanwings_FP.png, id=335, 691.58376pt x 444.66125pt>
+File: figures/Germanwings_FP.png Graphic file (type png)
+
+<use figures/Germanwings_FP.png>
+Package pdftex.def Info: figures/Germanwings_FP.png used on input line 98.
+(pdftex.def)             Requested size: 234.8775pt x 151.0132pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13 <./figures/collection_config.png>]) (./sections/developerManual.tex
+[13 <./figures/collection_config.png> <./figures/Germanwings_FP.png>]
+<figures/Germanwings.png, id=344, 578.16pt x 433.62pt>
+File: figures/Germanwings.png Graphic file (type png)
+
+<use figures/Germanwings.png>
+Package pdftex.def Info: figures/Germanwings.png used on input line 122.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 123.
+
+<figures/NAACPBombing.png, id=345, 578.16pt x 433.62pt>
+File: figures/NAACPBombing.png Graphic file (type png)
+
+<use figures/NAACPBombing.png>
+Package pdftex.def Info: figures/NAACPBombing.png used on input line 126.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 121--129
+[]$[]$|  $[]$ 
+ []
+
+<figures/Obamacare.png, id=346, 578.16pt x 433.62pt>
+File: figures/Obamacare.png Graphic file (type png)
+
+<use figures/Obamacare.png>
+Package pdftex.def Info: figures/Obamacare.png used on input line 132.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+
+<figures/wdbj7shooting.png, id=347, 578.16pt x 433.62pt>
+File: figures/wdbj7shooting.png Graphic file (type png)
+
+<use figures/wdbj7shooting.png>
+Package pdftex.def Info: figures/wdbj7shooting.png used on input line 136.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 131--139
+[]$[]$|  $[]$ 
+ []
+
+<figures/houstonflood.png, id=348, 578.16pt x 433.62pt>
+File: figures/houstonflood.png Graphic file (type png)
+
+<use figures/houstonflood.png>
+Package pdftex.def Info: figures/houstonflood.png used on input line 142.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+
+<figures/fourthofJuly.png, id=349, 578.16pt x 433.62pt>
+File: figures/fourthofJuly.png Graphic file (type png)
+
+<use figures/fourthofJuly.png>
+Package pdftex.def Info: figures/fourthofJuly.png used on input line 146.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 141--149
+[]$[]$|  $[]$ 
+ []
+
+) (./sections/developerManual.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1742,9 +1815,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [14]
+
+LaTeX Warning: Text page 15 contains only floats.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15 <./figures/Germanwings.png> <./figures/NAACPBombing.png> <./figures/Obamaca
+re.png> <./figures/wdbj7shooting.png> <./figures/houstonflood.png> <./figures/f
+ourthofJuly.png>]
 Chapter 5.
 
-LaTeX Warning: Citation 'han2000mining' on page 15 undefined on input line 10.
+LaTeX Warning: Citation 'han2000mining' on page 16 undefined on input line 10.
 
 
 Overfull \hbox (24.40234pt too wide) in paragraph at lines 10--11
@@ -1752,7 +1837,7 @@ Overfull \hbox (24.40234pt too wide) in paragraph at lines 10--11
 on a fre-quent pat-tern min-ing al-go-rithm [[]].
  []
 
-[15
+[16
 
 ]) (./sections/plan.tex
 
@@ -1761,15 +1846,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16]
+[17]
 Chapter 6.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
 
-LaTeX Warning: Citation 'pythonSparkTutorial' on page 17 undefined on input lin
+LaTeX Warning: Citation 'pythonSparkTutorial' on page 18 undefined on input lin
 e 88.
 
 
-LaTeX Warning: Citation 'solrTeamTutorial' on page 17 undefined on input line 8
+LaTeX Warning: Citation 'solrTeamTutorial' on page 18 undefined on input line 8
 8.
 
 
@@ -1778,7 +1863,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--88
  []
 
 
-LaTeX Warning: Citation 'hbaseShellTutorial' on page 17 undefined on input line
+LaTeX Warning: Citation 'hbaseShellTutorial' on page 18 undefined on input line
  88.
 
 
@@ -1787,7 +1872,7 @@ Underfull \hbox (badness 5388) in paragraph at lines 88--88
 k.
  []
 
-[17
+[18
 
 ]
 
@@ -1796,9 +1881,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[18]
+[19]
 
-LaTeX Warning: Citation 'bergstra2013hyperopt' on page 19 undefined on input li
+LaTeX Warning: Citation 'bergstra2013hyperopt' on page 20 undefined on input li
 ne 154.
 
 
@@ -1820,9 +1905,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19]
+[20]
 Chapter 7.
-) (./sections/futureWork.tex [20
+) (./sections/futureWork.tex [21
 
 ]
 Chapter 8.
@@ -1835,7 +1920,7 @@ LaTeX Warning: Empty bibliography on input line 59.
 
 
 AED: lastpage setting LastPage
-[21
+[22
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
@@ -1850,6 +1935,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 LaTeX Warning: There were undefined references.
 
 
+LaTeX Warning: There were multiply-defined labels.
+
+
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
 (biblatex)                and rerun LaTeX afterwards.
@@ -1859,11 +1947,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26357 strings out of 493304
- 440422 string characters out of 6139871
- 790345 words of memory out of 5000000
- 29166 multiletter control sequences out of 15000+600000
- 48081 words of font info for 67 fonts, out of 8000000 for 9000
+ 26469 strings out of 493304
+ 442482 string characters out of 6139871
+ 790624 words of memory out of 5000000
+ 29264 multiletter control sequences out of 15000+600000
+ 50884 words of font info for 69 fonts, out of 8000000 for 9000
  962 hyphenation exceptions out of 8191
  65i,12n,99p,1302b,1844s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1872,10 +1960,10 @@ f-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cou
 rier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (26 pages, 461803 bytes).
+Output written on main.pdf (27 pages, 661639 bytes).
 PDF statistics:
- 438 PDF objects out of 1000 (max. 8388607)
- 388 compressed objects within 4 object streams
- 103 named destinations out of 1000 (max. 500000)
- 347 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 464 PDF objects out of 1000 (max. 8388607)
+ 399 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 382 words of extra memory for PDF output out of 10000 (max. 10000000)
 
