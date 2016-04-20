@@ -1,4 +1,9 @@
 /.ipynb_checkpoints
+/data/FPGrowth
+/data/predictions
+/data/small_data
+/data/models
+
 
 # cache files for sublime text
 *.tmlanguage.cache
