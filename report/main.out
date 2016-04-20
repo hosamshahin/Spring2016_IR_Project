@@ -1,8 +1,8 @@
 \BOOKMARK [0][-]{label:frontpage.0}{Front page}{}% 1
 \BOOKMARK [0][-]{Doc-Start}{Abstract}{}% 2
 \BOOKMARK [0][-]{label:contents.0}{Contents}{}% 3
-\BOOKMARK [0][-]{chapter*.2}{List of Figures}{}% 4
-\BOOKMARK [0][-]{chapter*.3}{List of Tables}{}% 5
+\BOOKMARK [0][-]{chapter*.3}{List of Figures}{}% 4
+\BOOKMARK [0][-]{chapter*.4}{List of Tables}{}% 5
 \BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 6
 \BOOKMARK [0][-]{chapter.2}{2 Literature Review}{}% 7
 \BOOKMARK [1][-]{section.2.1}{2.1 Textbook}{chapter.2}% 8
@@ -15,20 +15,24 @@
 \BOOKMARK [2][-]{subsection.3.3.2}{3.3.2 Building the Training Data}{section.3.3}% 15
 \BOOKMARK [2][-]{subsection.3.3.3}{3.3.3 Training the Classifier}{section.3.3}% 16
 \BOOKMARK [2][-]{subsection.3.3.4}{3.3.4 Predicting the Class}{section.3.3}% 17
-\BOOKMARK [0][-]{chapter.4}{4 User Manual}{}% 18
-\BOOKMARK [1][-]{section.4.1}{4.1 Installing Requirements}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.2}{4.2 Preparing the Server}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.3}{4.3 Using the IPython Notebook}{chapter.4}% 21
-\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Using the Configuration File}{section.4.3}% 22
-\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Selecting a Frequent Pattern}{section.4.3}% 23
-\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3 Building a Training Set}{section.4.3}% 24
-\BOOKMARK [2][-]{subsection.4.3.4}{4.3.4 Training a Classifier}{section.4.3}% 25
-\BOOKMARK [2][-]{subsection.4.3.5}{4.3.5 Running the Classifier}{section.4.3}% 26
-\BOOKMARK [0][-]{chapter.5}{5 Developer Manual}{}% 27
-\BOOKMARK [1][-]{section.5.1}{5.1 Techniques}{chapter.5}% 28
-\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Frequent Pattern Mining}{section.5.1}% 29
-\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Na\357ve Bayes}{section.5.1}% 30
-\BOOKMARK [1][-]{section.5.2}{5.2 }{chapter.5}% 31
-\BOOKMARK [0][-]{chapter.6}{6 Plan}{}% 32
-\BOOKMARK [0][-]{chapter.7}{7 Conclusion}{}% 33
-\BOOKMARK [0][-]{chapter.8}{8 Future Work}{}% 34
+\BOOKMARK [2][-]{subsection.3.3.5}{3.3.5 Evaluating the Classifier}{section.3.3}% 18
+\BOOKMARK [2][-]{subsection.3.3.6}{3.3.6 Interfacing with HBase}{section.3.3}% 19
+\BOOKMARK [0][-]{chapter.4}{4 User Manual}{}% 20
+\BOOKMARK [1][-]{section.4.1}{4.1 Installation Requirements}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.2}{4.2 Preparing the Server}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.3}{4.3 Using the IPython Notebook}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Using the Configuration File}{section.4.3}% 24
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Selecting a Frequent Pattern}{section.4.3}% 25
+\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3 Building a Training Set}{section.4.3}% 26
+\BOOKMARK [2][-]{subsection.4.3.4}{4.3.4 Training a Classifier}{section.4.3}% 27
+\BOOKMARK [2][-]{subsection.4.3.5}{4.3.5 Running the Classifier}{section.4.3}% 28
+\BOOKMARK [0][-]{chapter.5}{5 Developer Manual}{}% 29
+\BOOKMARK [1][-]{section.5.1}{5.1 Algorithms}{chapter.5}% 30
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Frequent Pattern Mining}{section.5.1}% 31
+\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Logistic Regression}{section.5.1}% 32
+\BOOKMARK [1][-]{section.5.2}{5.2 Environment Setup}{chapter.5}% 33
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Dependencies}{section.5.2}% 34
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Apache Spark}{section.5.2}% 35
+\BOOKMARK [0][-]{chapter.6}{6 Plan}{}% 36
+\BOOKMARK [0][-]{chapter.7}{7 Conclusion}{}% 37
+\BOOKMARK [0][-]{chapter.8}{8 Future Work}{}% 38

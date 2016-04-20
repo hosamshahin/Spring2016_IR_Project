@@ -7,27 +7,43 @@ The developer manual will grow and evolve with the project. It documents the too
 \section{Algorithms}
 
 \subsection{Frequent Pattern Mining}
-Our methodology for constructing training data is based on frequent pattern mining algorithm. \href{https://spark.apache.org/docs/1.6.0/mllib-frequent-pattern-mining.html}{Spark.mllib} version 1.6 provides a parallel implementation of FP-growth, a popular algorithm to mining frequent itemsets. 
+Our methodology for constructing training data is based on a frequent pattern mining algorithm \cite{han2000mining}. \href{https://spark.apache.org/docs/1.5.0/mllib-frequent-pattern-mining.html}{Spark.mllib} version 1.5 provides a parallel implementation of FP-growth, a popular algorithm for mining frequent itemsets. 
 \subsection{Logistic Regression}
-Logistic regression is a popular method to predict a binary response. It is a special case of \href{https://en.wikipedia.org/wiki/Generalized_linear_model}{Generalized Linear models} that predicts the probability of the outcome. For more background and more details about the implementation, refer to the documentation of the \href{https://spark.apache.org/docs/1.6.0/mllib-linear-methods.html#logistic-regression}{logistic regression in spark.mllib}.
+Logistic regression is a popular method to predict a binary response. It is a special case of \href{https://en.wikipedia.org/wiki/Generalized_linear_model}{Generalized Linear models} that predicts the probability of the outcome. For more background and more details about the implementation, refer to the documentation of the \href{https://spark.apache.org/docs/1.5.0/mllib-linear-methods.html#logistic-regression}{logistic regression in spark.mllib}.
+
+\foxComment{What might a developer have to change in the future?
+
+Might there be scaling concerns?
+
+Might some methods need to be changed for different collections?
+
+Are there different concerns for webpages than tweets?}
 \section{Environment Setup}
+
+\foxComment{Should this section be in the user manual?}
 
 \subsection{Dependencies}
 
 \subsubsection{Java}
-You will need the latest version of Java, which at the time of this writing is Java Version 8 Update 73. Download and installation instructions for your environment can be found here:
+You will want the latest version of Java, which at the time of this writing is Java Version 8 Update 73. Download and installation instructions for your environment can be found at:
 
 \href{https://java.com/en/download/}{https://java.com/en/download/}
 
-\subsubsection{Python}
-You will need Python 2.7.9 (it may work with newer versions of the 2.7 line, but we have not tested it). Download and installation instructions for your environment can be found here:
+The Hadoop cluster we are working with is currently running Java Version 7 Update 99. This version of Java is capable of performing everything that we require for this work. However, due to security concerns among other things we recommend using the latest stable version of Java if setting up a cluster from scratch.
 
-\href{https://www.python.org/downloads/release/python-279/}{https://www.python.org/downloads/release/python-279/}
+\subsubsection{Python}
+You will need Python 2.6.6 (our work should be compatible with newer versions of the 2.x.x line, but we have not tested it). Download and installation instructions for your environment can be found at:
+
+\href{https://www.python.org/downloads/}{https://www.python.org/downloads/}
+
+While the cluster that we have implemented our solution on is using Python 2.6.6, we recommend using the latest stable version of the Python 2.x.x line if setting up a cluster from scratch.
 
 \subsection{Apache Spark}
-This system is built on Apache Spark 1.6.0, which can be downloaded here:
+This system is built on Apache Spark 1.5.0, which can be downloaded at:
 
 \href{http://spark.apache.org/downloads.html}{http://spark.apache.org/downloads.html}
+
+Any newer versions of Spark should also be compatible for the foreseeable future. So if setting up a cluster from scratch, we recommend installing the latest stable version of Spark.
 
 % Here is the introduction. The next chapter is chapter~\ref{ch:ch2label}.
 

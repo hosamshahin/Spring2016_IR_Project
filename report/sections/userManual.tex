@@ -4,7 +4,7 @@
 \section{Installation Requirements}
 In this documentation, we make the assumption that you have already installed at least Spark version 1.5.0 and have it configured properly. If you have not performed this step, you can find installation and setup instructions at \url{http://spark.apache.org/downloads.html}.
 
-The next step will be to clone the git repository of our team. This can be found hosted on github at: \url{https://github.com/hosamshahin/Spring2016_IR_Project.git}
+The next step will be to clone the Git repository of our team. This can be found hosted on Github at: \url{https://github.com/hosamshahin/Spring2016_IR_Project.git}
 
 Finally, you will need to extract the \texttt{small\_data.zip} file that can be found in the\\ \texttt{Spring2016\_IR\_Project/data} directory
 
@@ -16,13 +16,15 @@ On a Debian based system, you can run the following command:
   $ sudo apt-get install libgfortran3
 \end{lstlisting}
 
-Next install Anaconda which is a completely free Python distribution. It includes more than 400 of the most popular Python packages for science, math, engineering, and data analysis. For a complete instructions on how to download and install Anaconda go to:
+Next install Anaconda which is a completely free Python distribution. It includes more than 400 of the most popular Python packages for science, math, engineering, and data analysis. For complete instructions on how to download and install Anaconda go to:
 
 \url{https://www.continuum.io/downloads}
 
-Anaconda is shipped with IPython notebook, A powerful interactive shell for Python. Now to set up Spark and IPython to run together and provide a nice web interface, there are a number of things that need to be done.
+Anaconda is shipped with IPython notebook, a powerful interactive shell for Python.
 
-We will need to begin by creating an IPython profile for PySpark. This can be done using the command:
+To set up Spark and IPython to run together and provide a nice web interface, there are a number of things that need to be done.
+
+Begin by creating an IPython profile for PySpark. This can be done using the command:
 \begin{lstlisting}[language=bash]
   $ ipython profile create pyspark
 \end{lstlisting}
@@ -65,12 +67,15 @@ In order to use the script, you will need to modify the \texttt{base\_dir} varia
 
 \subsection{Using the Configuration File}
 
-To go further in using the script, you may need to make modifications to the \texttt{collections\_config.json} file under \texttt{data} see Figure \ref{fig:collection_config}. The provided configuration file is already configured to work with the six small datasets that were assigned to the groups at the start of the semester. However, the frequent patterns (FP) field has not been properly configured, this will need to be done for each collection as you work through the tutorial.
+To go further in using the script, you may need to make modifications to the \texttt{collections\_config.json} file under \texttt{data}; see Figure \ref{fig:collection_config}. The provided configuration file is already configured to work with the six small datasets that were assigned to the groups at the start of the semester. However, the frequent patterns (FP) field has not been properly configured. This will need to be done for each collection as you work through the tutorial.
 
 \begin{figure}[th!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/collection_config}
     \caption{Collections configuration file}\label{fig:collection_config}
+    \foxComment{The FP entries seem odd.
+
+Was there overfitting to an odd positive set?}
 \end{figure}
 
 %At this point the only section of the file that needs to be worried about is the first collection object. That is being used for the binary classifications we are currently using. The second object will be used for multiclass classification in the future.
@@ -88,6 +93,8 @@ You should now inspect the file for the tokens frequently found together. Look f
 
 Take the pattern and copy it as the value of ``FP'' in the configuration file.
 
+\foxComment{Can you give examples?}
+
 \subsection{Building a Training Set}
 
 After the frequent pattern has been selected and input into the configuration file, continue to step through the script using Shift + Enter  in each cell.
@@ -100,7 +107,7 @@ Further progression through the script will actually use the training data const
 
 \subsection{Running the Classifier}
 
-Finally apply the classification model to our test data and provide a prediction of relevance (1.0) or non-relevance (0.0) for each tweet in the test data. This data can be found in the \texttt{predictions} directory and has the same name formatting as the frequent pattern output files.
+Finally, apply the classification model to our test data and provide a prediction of relevance (1.0) or non-relevance (0.0) for each tweet in the test data. This data can be found in the \texttt{predictions} directory and has the same name formatting as the frequent pattern output files.
 
 % Here is the introduction. The next chapter is chapter~\ref{ch:ch2label}.
 
