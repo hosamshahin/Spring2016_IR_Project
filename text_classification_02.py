@@ -1,5 +1,6 @@
 from __future__ import print_function
 import globals
+from globals import load_config
 import codecs, re, json, os, time
 from pyspark import SparkContext, SparkConf
 from pyspark.mllib.fpm import FPGrowth
@@ -16,7 +17,7 @@ if __name__ == "__main__":
     sqlContext = SQLContext(sc)
 
     # get FP from config file
-    config_data = load_config(config_file)
+    config_data = load_config(globals.config_file)
 
     def create_training_data(tweets, freq_patterns):
         # Tweets contains the frequent pattern terms will be considered as positive samples
@@ -102,14 +103,38 @@ if __name__ == "__main__":
                                 + collection["Id"] + '_'
                                 + collection["name"])
         print(prediction_path)
-        def saveData(data):
-            with open(prediction_path, 'a') as f:
-                f.write(data.id+"\t"+str(data.probability[1])+"\n")
-        selected.foreach(saveData)
 
+        write_records_to_hbase(selection)
+        #def saveData(data):
+        #    with open(prediction_path, 'a') as f:
+        #        f.write(data.id+"\t"+str(data.probability[1])+"\n")
+        #selected.foreach(saveData)
+
+    def write_records_to_hbase(records):
+      outputConf = {"hbase.zookeeper.quorum": host,
+            "hbase.mapred.outputtable": table,
+            "mapreduce.outputformat.class": "org.apache.hadoop.hbase.mapreduce.TableOutputFormat",
+            "mapreduce.job.output.key.class": "org.apache.hadoop.hbase.io.ImmutableBytesWritable",
+            "mapreduce.job.output.value.class": "org.apache.hadoop.io.Writable"}
+      keyConv = "org.apache.spark.examples.pythonconverters.StringToImmutableBytesWritableConverter"
+      valueConv = "org.apache.spark.examples.pythonconverters.StringListToPutConverter"
+
+      def mapDataset(x):
+        rowkey = data.id
+        columnFamily = "classification"
+        columnName = "probability2"
+        value = data.probability[1]
+        return (rowkey, [rowkey, columnFamily, columnName, value])
+
+      # ( rowkey , [ row key , column family , column name , value ] )
+      #rdd = sc.parallelize(array).map(mapDataset).saveAsNewAPIHadoopDataset(
+      records.map(mapDataset).saveAsNewAPIHadoopDataset(
+          conf=outputConf,
+          keyConverter=keyConv,
+          valueConverter=valueConv)
 
     for x in config_data["collections"]:
-        tweets = Load_tweets(x["Id"])
+        tweets = Load_tweets(str(x["Id"]))
         if tweets:
             freq_patterns = x["FP"]
             tweets = preprocess_tweets(tweets)

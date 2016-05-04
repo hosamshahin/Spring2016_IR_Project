@@ -7,8 +7,7 @@ from pyspark.mllib.fpm import FPGrowth
 from pyspark.sql import SQLContext, Row
 from pyspark.ml import Pipeline
 from pyspark.ml.classification import LogisticRegression
-from pyspark.ml.feature import HashingTF, Tokenizer, IDF
-# , StopWordsRemover
+from pyspark.ml.feature import HashingTF, Tokenizer, IDF, StopWordsRemover
 from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
 
@@ -21,7 +20,7 @@ if __name__ == "__main__":
     def parse_tweet(line):
         """
         Parses a tweet record having the following format collectionId-tweetId<\t>tweetString
-        """
+        
         fields = line.strip().split("\t")
         if len(fields) == 2:
             # The following regex just strips of an URL (not just http), any punctuations,
@@ -32,17 +31,41 @@ if __name__ == "__main__":
             text = ' '.join(filter(lambda x: len(x) > 2, text.split(" ")))
             # return tuple of (collectionId-tweetId, text)
             return (fields[0], text)
+        """
+        # The following regex just strips of an URL (not just http), any punctuations,
+        # or Any non alphanumeric characters
+        # http://goo.gl/J8ZxDT
+        text = re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",json.loads(line[1])["value"]).strip()
+        # remove terms <= 2 characters
+        text = ' '.join(filter(lambda x: len(x) > 2, text.split(" ")))
+
+        return (line[0], text)
 
 
     def Load_tweets(collection_id):
-        tweets_file = os.path.join(globals.data_dir , "z_" + collection_id)
-        print("Loading " + tweets_file)
-        if not os.path.isdir(tweets_file):
-            print(tweets_file + " folder doesn't exist.")
-            return False
-        tweets = sc.textFile(tweets_file) \
+        
+        # Other options for configuring scan behavior are available. More information available at
+        # https://github.com/apache/hbase/blob/master/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/TableInputFormat.java
+        inputConf = {"hbase.zookeeper.quorum": globals.host, "hbase.mapreduce.inputtable": globals.table}
+        keyConv = "org.apache.spark.examples.pythonconverters.ImmutableBytesWritableToStringConverter"
+        valueConv = "org.apache.spark.examples.pythonconverters.HBaseResultToStringConverter"
+
+        hbase_rdd = sc.newAPIHadoopRDD(
+        "org.apache.hadoop.hbase.mapreduce.TableInputFormat",
+        "org.apache.hadoop.hbase.io.ImmutableBytesWritable",
+        "org.apache.hadoop.hbase.client.Result",
+        keyConverter=keyConv,
+        valueConverter=valueConv,
+        conf=inputConf)
+
+        broadcastCollectionNumber = sc.broadcast(str(collection_id))
+
+        print("Loading " + collection_id)
+
+        tweets = hbase_rdd.flatMapValues(lambda v: v.split("\n")) \
+                  .filter(lambda x: x[0].startswith(broadcastCollectionNumber.value) \
+                    and json.loads(x[1])["columnFamily"] == "collection-management") \
                   .map(parse_tweet) \
-                  .filter(lambda x: x is not None) \
                   .map(lambda x: Row(id=x[0], text=x[1])) \
                   .toDF() \
                   .cache()
@@ -52,8 +75,8 @@ if __name__ == "__main__":
     def preprocess_tweets(tweets):
         tokenizer = Tokenizer(inputCol="text", outputCol="words")
         tweets = tokenizer.transform(tweets)
-        # remover = StopWordsRemover(inputCol="words", outputCol="filtered")
-        # tweets = remover.transform(tweets)
+        remover = StopWordsRemover(inputCol="words", outputCol="filtered")
+        tweets = remover.transform(tweets)
         return tweets
 
 
@@ -76,7 +99,7 @@ if __name__ == "__main__":
         sorted_result = sorted(result, key=lambda item: int(item.freq), reverse=True)
 
         # save output to file
-        with codecs.open(FP_dir + time.strftime("%Y%m%d-%H%M%S") + '_'
+        with codecs.open(globals.FP_dir + "/" + time.strftime("%Y%m%d-%H%M%S") + '_'
                                 + collection["Id"] + '_'
                                 + collection["name"] + '.txt', 'w',encoding='utf-8') as file:
             for item in sorted_result:
@@ -84,9 +107,14 @@ if __name__ == "__main__":
 
 
     config_data = load_config(globals.config_file)
+
     for x in config_data["collections"]:
-        tweets = Load_tweets(x["Id"])
+        print("GOING TO GET " + x["Id"])
+        tweets = Load_tweets(str(x["Id"]))
+        print("Collected " + x["Id"])
+
         if tweets:
             tweets = preprocess_tweets(tweets)
             tweets = save_unique_token(tweets)
             run_FPM(tweets, x)
+    
